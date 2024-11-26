@@ -10,7 +10,6 @@ import UIKit
 import AVFoundation
 
 class ViewController: UIViewController {
-    
     @IBOutlet weak var audioMeterSteroR:OMMeter!
     @IBOutlet weak var audioMeterSteroL:OMMeter!
     var averagePower:Bool = true
@@ -23,7 +22,7 @@ class ViewController: UIViewController {
         }
         do {
             /// this codes for making this app ready to takeover the device audio
-            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
             try AVAudioSession.sharedInstance().setActive(true)
             
             /// change fileTypeHint according to the type of your audio file (you can omit this)
@@ -41,20 +40,20 @@ class ViewController: UIViewController {
     @objc func updateMeters() {
         if (player.isPlaying ) {
             player.updateMeters()
-            var power = 0.0;
-            var peak  = 0.0;
-            for i in 0 ..< player.numberOfChannels {
-                power = Double(player.averagePower(forChannel: i))
-                peak  = Double(player.peakPower(forChannel: i))
+            var power = 0.0
+            var peak  = 0.0
+            for index in 0 ..< player.numberOfChannels {
+                power = Double(player.averagePower(forChannel: index))
+                peak  = Double(player.peakPower(forChannel: index))
                 
                 if averagePower {
-                    if i == 0 {
+                    if index == 0 {
                         audioMeterSteroR.value = CGFloat(power)
                     } else {
                         audioMeterSteroL.value = CGFloat(power)
                     }
                 } else {
-                    if i == 0 {
+                    if index == 0 {
                         audioMeterSteroR.value = CGFloat(peak)
                     } else {
                         audioMeterSteroL.value = CGFloat(peak)
@@ -80,7 +79,7 @@ class ViewController: UIViewController {
         playSound(name: "atmosbasement",withExtension: "mp3")
         
         let dpLink = CADisplayLink( target:self, selector:#selector(updateMeters));
-        dpLink.add(to: RunLoop.current,forMode:RunLoopMode.commonModes);
+        dpLink.add(to: RunLoop.current,forMode:RunLoop.Mode.common);
     }
 }
 
