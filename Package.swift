@@ -16,7 +16,7 @@ let package = Package(
             name: "OMMeter",
             dependencies: [],
             path: "OMMeter/Classes",
-            exclude: ["Example", "ScreenShot", "README.md", "LICENSE", "OMMeter.podspec"]
+            exclude: ["Example", "ScreenShot", "README.md", "LICENSE"]
         ),
     ]
 )
