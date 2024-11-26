@@ -66,9 +66,9 @@ public func slope( x:Float, A:Float) -> Float {
 
 //TODO: use Generics
 
-public func map(input:CGFloat,input_start:CGFloat,input_end:CGFloat,output_start:CGFloat,output_end:CGFloat)-> CGFloat {
-    let slope = 1.0 * (output_end - output_start) / (input_end - input_start)
-    return output_start + round(slope * (input - input_start))
+public func map(input:CGFloat,istart:CGFloat,iend:CGFloat,ostart:CGFloat,oend:CGFloat)-> CGFloat {
+    let slope = 1.0 * (oend - ostart) / (iend - istart)
+    return ostart + round(slope * (input - istart))
 }
 
 public func linlin( val:Double,  inMin:Double,  inMax:Double,  outMin:Double,  outMax:Double) -> Double {
@@ -86,4 +86,15 @@ public func explin(val:Double,  inMin:Double,  inMax:Double,  outMin:Double,  ou
     //clipping
     let valclamp = max(min(val, inMax), inMin);
     return (log(valclamp/inMin) / log(inMax/inMin) * (outMax - outMin)) + outMin;
+}
+
+// clamp a number between lower and upper.
+public func clamp<T: Comparable>(_ value: T, lower: T, upper: T) -> T {
+    return min(max(value, lower), upper)
+}
+
+// redistributes values on a slope (ease-in ease-out)
+public func slope( slopeX: Float, slopeA: Float) -> Float {
+    let slopeP = powf(slopeX, slopeA)
+    return slopeP/(slopeP + powf(1.0-slopeX, slopeA))
 }

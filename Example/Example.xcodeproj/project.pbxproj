@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C9F1326D21A192B800BF14BB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F1326121A192B800BF14BB /* ViewController.swift */; };
+		0474045E2CF6350D0051FAC6 /* MicrophoneMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0474045B2CF6350D0051FAC6 /* MicrophoneMonitor.swift */; };
+		C9F1326D21A192B800BF14BB /* MeterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F1326121A192B800BF14BB /* MeterViewController.swift */; };
 		C9F1326E21A192B800BF14BB /* atmosbasement.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C9F1326321A192B800BF14BB /* atmosbasement.mp3 */; };
 		C9F1326F21A192B800BF14BB /* atmosbasement.txt in Resources */ = {isa = PBXBuildFile; fileRef = C9F1326421A192B800BF14BB /* atmosbasement.txt */; };
 		C9F1327021A192B800BF14BB /* test_-20dBs.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C9F1326521A192B800BF14BB /* test_-20dBs.mp3 */; };
@@ -26,8 +27,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0474045B2CF6350D0051FAC6 /* MicrophoneMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MicrophoneMonitor.swift; sourceTree = "<group>"; };
 		35DFF8321DD05BA700996DDA /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		C9F1326121A192B800BF14BB /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C9F1326121A192B800BF14BB /* MeterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeterViewController.swift; sourceTree = "<group>"; };
 		C9F1326321A192B800BF14BB /* atmosbasement.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = atmosbasement.mp3; sourceTree = "<group>"; };
 		C9F1326421A192B800BF14BB /* atmosbasement.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = atmosbasement.txt; sourceTree = "<group>"; };
 		C9F1326521A192B800BF14BB /* test_-20dBs.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "test_-20dBs.mp3"; sourceTree = "<group>"; };
@@ -57,6 +59,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0474045C2CF6350D0051FAC6 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				0474045B2CF6350D0051FAC6 /* MicrophoneMonitor.swift */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
 		35DFF8291DD05BA700996DDA = {
 			isa = PBXGroup;
 			children = (
@@ -77,7 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				C9F1327821A1937400BF14BB /* OMMeter */,
-				C9F1326121A192B800BF14BB /* ViewController.swift */,
+				C9F1326121A192B800BF14BB /* MeterViewController.swift */,
 				C9F1326221A192B800BF14BB /* Resources */,
 				C9F1326621A192B800BF14BB /* Assets.xcassets */,
 				C9F1326921A192B800BF14BB /* Main.storyboard */,
@@ -109,6 +119,7 @@
 		C9F1327921A1937400BF14BB /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				0474045C2CF6350D0051FAC6 /* Audio */,
 				C9F1327A21A1937400BF14BB /* Math.swift */,
 				C9F1327B21A1937400BF14BB /* Extensions */,
 				C9F1328221A1937400BF14BB /* Interpolation.swift */,
@@ -232,7 +243,8 @@
 				C9F1328B21A1937400BF14BB /* Interpolation.swift in Sources */,
 				C9F1327421A192B800BF14BB /* AppDelegate.swift in Sources */,
 				C9F1328721A1937400BF14BB /* UIColor+Extensions.swift in Sources */,
-				C9F1326D21A192B800BF14BB /* ViewController.swift in Sources */,
+				0474045E2CF6350D0051FAC6 /* MicrophoneMonitor.swift in Sources */,
+				C9F1326D21A192B800BF14BB /* MeterViewController.swift in Sources */,
 				C9F1328521A1937400BF14BB /* UIColor+Interpolation.swift in Sources */,
 				C9F1328821A1937400BF14BB /* CGFloat+Math.swift in Sources */,
 				C9F1328621A1937400BF14BB /* UIFont+Extensions.swift in Sources */,
@@ -309,7 +321,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -365,7 +377,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;

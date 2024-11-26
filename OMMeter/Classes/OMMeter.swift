@@ -1,5 +1,5 @@
 //
-//    Copyright 2016 - Jorge Ouahbi
+//    Copyright 2022 - Jorge Ouahbi
 //
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
@@ -197,7 +197,7 @@ public class OMMeter : UIControl
                 
                 if value <= elementValue + minimumValue {
                     let percentGradient = CGFloat(numberOfGradientElements) * percentValue - CGFloat(elementIndex)
-                    endColor = UIColor.lerp(startColor,end: endColor,t: percentGradient)
+                    endColor = UIColor.lerp(startColor,end: endColor,alpha: percentGradient)
                     let percentPointDifference = ((endPoint.y - startPoint.y) * percentGradient)
                     endPoint = CGPoint(x:startPoint.x, y:startPoint.y + percentPointDifference)
                 }
@@ -321,10 +321,10 @@ public class OMMeter : UIControl
             if i % 10 == 0 {
                 targetPoint = CGPoint(x:pointTickMid.x - tickLengthTen , y:pointTickMid.y)
                 let textLevel = map(input: minimumValue + CGFloat(i * 10),
-                                    input_start:minimumValue ,
-                                    input_end: maximumTickValue,
-                                    output_start: minimumValue,
-                                    output_end: maximumValue)
+                                    istart:minimumValue ,
+                                    iend: maximumTickValue,
+                                    ostart: minimumValue,
+                                    oend: maximumValue)
                 let textLevelRect = CGRect(x: pointTickMid.x + stringMaxSize.width  - (stringMaxSize.width * 0.5),
                                            y: pointTickMid.y - stringMaxSize.height,
                                            width: stringMaxSize.width,
