@@ -8,10 +8,12 @@
 
 import UIKit
 import AVFoundation
+
 protocol SoundPlayer {
     func playSound(name: String, withExtension: String, numberOfLoops: Int, meteringEnabled: Bool)
     func updatePlayerMeters()
 }
+
 @available(iOS 13.0, *)
 class MeterViewController: UIViewController {
     @IBOutlet weak var audioMeterSteroR: OMMeter!
@@ -39,6 +41,8 @@ class MeterViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         // R meter
         audioMeterSteroR.minimumValue = -80
         audioMeterSteroR.maximumValue = 20

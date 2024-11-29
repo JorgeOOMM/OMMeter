@@ -5,7 +5,7 @@
 
 Custom Lightweight CoreGraphics Meter UIControl in Swift
 
-![](https://github.com/JorgeOOMM/OMMeter/blob/main/ScreenShot/ScreenShot.png)
+![](https://github.com/JorgeOOMM/OMMeter/blob/main/gif/gif.gif)
 
 ## Features
 
